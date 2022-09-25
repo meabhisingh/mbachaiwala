@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "colors";
 
 * {
   padding: 0%;
@@ -8,4 +9,28 @@
 
 body {
   overflow-x: hidden;
+}
+
+.loader {
+  background-color: $yellow;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 100;
+  img {
+    width: 10rem;
+    animation: loadingAnimation 0.5s linear infinite alternate;
+  }
+}
+
+@keyframes loadingAnimation {
+  to {
+    transform: scale(1.1);
+    opacity: 0;
+  }
 }

@@ -1,7 +1,12 @@
+import { useEffect, useState } from "react";
 import IntroVideo from "./components/IntroVideo";
 import Section from "./components/Section";
-import freshTopicImg from "./assets/academy.png";
+import Misc from "./components/Misc";
+import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 import data from "./data/data.json";
+
+import freshTopicImg from "./assets/academy.png";
 import freshTopic2Img from "./assets/story.png";
 import tedTalksImg from "./assets/in-the-news.gif";
 import franchiseImg from "./assets/franchise.gif";
@@ -10,8 +15,6 @@ import coursesImg from "./assets/image2.png";
 import albumImg from "./assets/mba-cares.gif";
 import baratImg from "./assets/image1.png";
 import chaiWalaImg from "./assets/image3.png";
-import Footer from "./components/Footer";
-import Misc from "./components/Misc";
 
 import "./styles/App.scss";
 import "./styles/intro.scss";
@@ -19,7 +22,6 @@ import "./styles/section.scss";
 import "./styles/footer.scss";
 import "./styles/misc.scss";
 import "./styles/mediaQuery.scss";
-import { useEffect } from "react";
 
 const yellow = "#fff100",
   pink = "#ed1e79",
@@ -38,6 +40,8 @@ function App() {
     barat,
     chaiwala,
   } = data;
+
+  const [loading, setLoading] = useState(true);
 
   const dotCursor = (e) => {
     const cursor = document.querySelector(".cursor");
@@ -58,6 +62,11 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("mousemove", dotCursor);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
     return () => {
       window.removeEventListener("mousemove", dotCursor);
     };
@@ -65,6 +74,7 @@ function App() {
 
   return (
     <>
+      {loading && <Loader />}
       <IntroVideo />
       {/* FreshTopic */}
       <Section
