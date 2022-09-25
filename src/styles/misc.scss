@@ -1,0 +1,67 @@
+@import "colors";
+
+.cursor {
+  width: 26px;
+  height: 26px;
+  border: 2px solid $red;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s;
+  pointer-events: none;
+  z-index: 1200;
+}
+
+.cursorHover {
+  transform: scale(3);
+  border: none;
+  box-shadow: 0 0 10px $red;
+}
+.cursorHoverMini {
+  transform: scale(0.5);
+  box-shadow: 0 0 20px $red;
+}
+
+.logo {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 9rem;
+  img {
+    width: 100%;
+  }
+}
+
+.franchiseBtn {
+  text-decoration: none;
+  background-color: $brown;
+  color: $yellow;
+  position: fixed;
+  top: 1rem;
+  right: 5rem;
+  letter-spacing: 2px;
+  font: 700 14px $text;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 7px;
+  transform-origin: bottom;
+  transition: transform 0.5s;
+  &:hover {
+    transform: skewX(-10deg);
+  }
+}
+
+.scrollBtn {
+  position: absolute;
+  left: 50%;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  color: $white;
+  font-size: 4rem;
+  animation: mouseScrollAnimation 0.5s linear infinite alternate;
+}
+
+@keyframes mouseScrollAnimation {
+  to {
+    transform: translate(-50%, -10px);
+  }
+}

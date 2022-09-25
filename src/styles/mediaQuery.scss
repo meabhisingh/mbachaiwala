@@ -1,0 +1,71 @@
+@media screen and (max-aspect-ratio: 13/10) {
+  .intro {
+    height: 100vh;
+    video {
+      margin-top: 0%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    div {
+      height: inherit;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .franchiseBtn {
+    top: unset;
+    right: unset;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    &:hover {
+      transform: translateX(-50%) skewX(-10deg);
+    }
+  }
+
+  footer {
+    padding: 13rem 0;
+    grid-template-columns: 1fr;
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    aside {
+      align-items: center;
+    }
+
+    div {
+      padding: 2rem;
+      align-items: center;
+
+      &:last-of-type {
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding: 2rem;
+    h3 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+  footer {
+    padding: 7rem 0;
+    h1 {
+      font-size: 25px;
+    }
+    div {
+      padding: 0;
+    }
+  }
+}

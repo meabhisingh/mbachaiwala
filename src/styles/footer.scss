@@ -1,0 +1,77 @@
+@import "colors";
+
+footer {
+  width: 100%;
+  height: 100vh;
+  background-color: $yellow;
+  position: fixed;
+  bottom: 0%;
+  z-index: -1;
+  padding: 13rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+
+  h1 {
+    color: $pink;
+    font: italic 800 62px $text;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    a {
+      color: $pink;
+      text-transform: uppercase;
+      font: 500 14px $text;
+      text-decoration: none;
+      letter-spacing: 3px;
+      line-height: 1.9;
+      transition: all 0.5s;
+    }
+  }
+
+  div {
+    color: $pink;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+
+    &:last-of-type {
+      align-items: flex-end;
+    }
+
+    h5 {
+      font: 500 22px $text;
+      line-height: 1.2;
+      margin: 1rem 0;
+    }
+    a {
+      text-decoration: none;
+      font-family: $text;
+      color: $pink;
+    }
+  }
+
+  p {
+    font: 500 12px $text;
+    color: $pink;
+    letter-spacing: 3px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  z-index: -2;
+  position: absolute;
+}
