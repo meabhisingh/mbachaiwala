@@ -83,8 +83,8 @@ const Section = ({
           }}
           data-cursorpointer={true}
           {...textOptions}
-        >
-          {text}
+          // it will load innerHTML in json in previous code it print <Strong></Strong> tag in "Ted Talks" section
+          dangerouslySetInnerHTML={{ __html: text }}>
         </motion.p>
 
         {hasBtn && (
